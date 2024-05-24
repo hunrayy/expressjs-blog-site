@@ -9,8 +9,11 @@ const multer = require("multer")
 const PORT = process.env.PORT
 const mongodb = require("mongodb")
 const client = new mongodb.MongoClient(process.env.DB_URL)
+const auth = require("./auth/auth")
 
 // use the installed modules
+
+server.use(bodyParser.json())
 server.use(cors())
 server.use(bodyParser.urlencoded({extended: false}))
 server.use(express.static(path.join(__dirname, "public")))
@@ -34,8 +37,14 @@ server.get("/", (request, response, next)=>{
 })
 
 
-server.get("/register", (request, response, next)=>{
+server.get("/register", (request, response)=>{
     response.render("register")
+})
+server.post("/register", async(request, response)=>{
+    const {firstname, lastname, email, password} = request.body
+    const create_user_account = await auth.create_user_account(firstname, lastname, email, password)
+    console.log("from server", create_user_account)
+    response.send(create_user_account)
 })
 
 

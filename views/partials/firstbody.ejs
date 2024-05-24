@@ -1,72 +1,122 @@
 <style>
-    .second-animation{
+    .second-animation {
         animation-name: second-animation;
         animation-duration: 1s;
         animation-timing-function: 1s;
     }
-    .color-change{
+
+    .color-change {
         animation-name: color-change;
         animation-duration: 15s;
         animation-timing-function: 1s;
         animation-iteration-count: infinite;
     }
+
     @keyframes color-change {
-        20%{
-            color: rgb(58,160,215);
-        }40%{
-            color: rgb(233,0,1);
-        }60%{
-            color: rgb(247,154,27);
-        }80%{
-            color: rgb(145,199,63);
-        }100%{
-            color: rgb(58,160,215);
+        20% {
+            color: rgb(58, 160, 215);
+        }
+        40% {
+            color: rgb(233, 0, 1);
+        }
+        60% {
+            color: rgb(247, 154, 27);
+        }
+        80% {
+            color: rgb(145, 199, 63);
+        }
+        100% {
+            color: rgb(58, 160, 215);
         }
     }
-    
+
     @keyframes second-animation {
-        0%{
-            transform: translatex(-5vh);
+        0% {
+            transform: translateX(-5vh);
             opacity: 0;
             scale: 0.5;
-        }100%{
-            transform: translatex(0vh);
+        }
+        100% {
+            transform: translateX(0vh);
             opacity: 1;
             scale: 1;
         }
     }
 
-    .img-animation{
+    .img-animation {
         animation-name: img-animation;
         animation-duration: 2s;
         animation-timing-function: 2s;
     }
+
     @keyframes img-animation {
-        0%{
+        0% {
             opacity: 0;
-            transform: translatey(5vh);
-        }100%{
+            transform: translateY(5vh);
+        }
+        100% {
             opacity: 1;
-            transform: translatey(0vh);
+            transform: translateY(0vh);
         }
     }
+
+    .floating-text-cover {
+        background-color: rgba(0, 0, 0, 0.712);
+        width: 650px;
+        height: 510px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: 1s;
+        cursor: pointer;
+
+    }
+
+    .floating-text {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.493);
+        width: 250px;
+        height: 200px;
+        font-size: 20px;
+        font-family: cursive;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .img-container:hover .floating-text-cover {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .img-container {
+        position: relative;
+        width: 650px;
+        height: 650px;
+    }
 </style>
-
-
-
-
-<!-- style="background-color: rgb(255, 239, 237);" -->
 <div>
-    <div style="display: flex; height: 72vh;">
+    <div style="display: flex; height: 72vh; position: relative;">
         <div style="width: 55%; padding: 30px; display: flex; flex-direction: column; background-color: rgb(246,246,244);">
-            <p class="second-animation"  data-text="DIGITAL MARKETING"width: fit-content;">DIGITAL MARKETING TEMPLATES</p>
+            <p class="second-animation" data-text="DIGITAL MARKETING" style="width: fit-content;">DIGITAL MARKETING TEMPLATES</p>
             <h1 class="second-animation color-change" style="width: fit-content; font-size: 50px; padding: 30px 0px 30px 0px; color: rgb(58,160,215);">Engage your customers with beautifully-made emails</h1>
             <p class="second-animation" style="width: fit-content; font-size: 25px;">Create eye-catching emails and grow your business with our library of 100+ newly-added paid templates.</p>
         </div>
-        <div style="width: 45%; background-color: rgb(246,246,244); position: static; z-index: -1;">
-            <img class="img-animation" style="position: fixed; z-index: -1;" width="650px" src="https://eep.io/images/yzco4xsimv0y/6MD1NHcibCJpU6N3ayI1t2/a3b422e5e369fc4164154e9b86e6644c/hero.png?w=1520&fm=avif&q=60" alt="">
-    
-    
+        <div style="width: 45%; background-color: rgb(246,246,244); position: relative;">
+            <div class="img-container">
+                <img class="img-animation" width="650px" src="https://eep.io/images/yzco4xsimv0y/6MD1NHcibCJpU6N3ayI1t2/a3b422e5e369fc4164154e9b86e6644c/hero.png?w=1520&fm=avif&q=60" alt="">
+                <div class="floating-text-cover">
+                    <div class="floating-text">Add a text you want to write here to fit it</div>
+                </div>
+            </div>
         </div>
     </div>
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #241c15; color: white; height: 30vh; padding: 0 80px 0 80px;">
@@ -76,7 +126,7 @@
         </div>
         <div style="line-height: 50px;">
             <p style="font-size: 50px;">8 million</p>
-            <p>data-backed  recommendations</p>
+            <p>data-backed recommendations</p>
         </div>
         <div style="line-height: 50px;">
             <p style="font-size: 50px;">500 million</p>
