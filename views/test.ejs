@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Social Media Platform</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Your custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Top Header with Logo -->
+    <header class="bg-blue-500 p-4 flex justify-between items-center sticky top-0 z-40">
+        <div class="flex items-center w-1/5 text-white text-xl font-bold">
+            <img src="logo.png" alt="Logo" class="w-10 h-10 mr-2">
+            <p class="hidden sm:block">P . A . G . E</p>
+        </div>
+    
+        <div class="relative w-1/2">
+            <i class="fas fa-search absolute top-3 left-4 cursor-pointer"></i>
+            <input type="search" class="w-full px-10 py-2 rounded-full" placeholder="Search for people, pages, group and #hastags">
+        </div>
+    
+        <div class="w-1/5 flex justify-center relative">
+            <img id="accountIcon" src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="User 1" class="w-10 h-10 rounded-full mr-2 cursor-pointer">        
+        </div>
+    </header>
+
+    <!-- Account Menu -->
+    <div id="accountMenu" class="hidden fixed top-0 left-0 w-full h-full bg-red" style="z-index: 100">
+        <div class="bg-white shadow-md rounded-lg absolute top-4 right-5 w-52">
+            <div class="p-3 border-b border-gray-300">
+                <div class="flex items-center justify-between">
+                    <p>Buzz brain</p>
+                    <img src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="User 1" class="w-10 h-10 rounded-full">
+                </div>
+                <div class="py-2 px-3">
+                    <i class="fas fa-bookmark mr-2"></i> Wallet: $0.00
+                </div>
+                <div class="py-2 px-3">
+                    <i class="fas fa-bookmark mr-2"></i> Points: 0
+                </div>
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Upgrade to pro
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Advertising
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Edit
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> General Setting
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Subscriptions
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Log Out
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Switch Account
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Keyboard Shortcuts
+            </div>
+            <div class="py-2 px-3 border-t border-gray-300">
+                <i class="fas fa-bookmark mr-2 mb-1"></i> Night Mode
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8 flex">
+        <!-- Left Sidebar -->
+        <div class="w-1/5 px-4">
+            <nav class="bg-white p-3 rounded shadow-md mb-4 sticky top-0">
+                <ul>
+                    <a href="index.html" class="block mb-2 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-home sm:mr-2"></i>
+                            <span class="hidden sm:block">Home</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-bell mr-2"></i>
+                            <span class="hidden sm:block">Notifications</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span class="hidden sm:block">Messages</span>
+                        </li>
+                    </a>
+
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-bookmark mr-2"></i>
+                            <span class="hidden sm:block">Bookmarks</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-graduation-cap mr-2"></i> 
+                            <span class="hidden sm:block">E-Learning</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-store mr-2"></i>
+                            <span class="hidden sm:block">Marketplace</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-tv mr-2"></i>
+                            <span class="hidden sm:block">Live Programs</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-blog mr-2"></i>
+                            <span class="hidden sm:block">Blog</span>
+                        </li>
+                    </a>
+                    <a href="#" class="block mb-2 mb-3 text-black mb-3 hover:bg-gray-200 py-2 px-4 rounded">
+                        <li class="flex items-center">
+                            <i class="fas fa-money-bill mr-2"></i>  
+                            <span class="hidden sm:block"> Cash Exchange</span>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        
+
+        <!-- Main Content Area -->
+        <div class="w-5/5 pr-4 sm:w-3/5">
+            <div class="bg-white p-4 rounded shadow-md mb-4">
+                <h2 class="text-xl font-semibold mb-4">Home</h2>
+                <!-- Add to Story Section -->
+                <div style="border-radius: 10px;" class="overflow-x-scroll bg-blue-500 flex p-4 items-center mb-4 space-x-4">
+                    <div class="flex space-x-2" style="background-color: blue; padding:5px; width: 120px; height: 80px; display: flex; justify-content: center; align-items: center; border-radius: 10px;">
+                        <span style="color: white; font-size: 2rem;">&plus;</span>
+                        <h3 class="font-semibold" style="color: white; width: 60%;">Add to Story</h3>
+                    </div>
+                    <div class="flex space-x-2">
+                        <!-- Replace these images with actual story images -->
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/casual-young-african-man-smiling-isolated-white_93675-128895.jpg?size=626&ext=jpg&ga=GA1.1.1234263249.1715352068&semt=sph" alt="Story 1" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/close-up-shot-pretty-woman-with-perfect-teeth-dark-clean-skin-having-rest-indoors-smiling-happily-after-received-good-positive-news_273609-1248.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.1.1234263249.1715352068&semt=sph" alt="Story 2" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 4" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/indoor-shot-glad-young-bearded-man-mustache-wears-denim-shirt-smiles-happily_273609-8698.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 5" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/indoor-shot-glad-young-bearded-man-mustache-wears-denim-shirt-smiles-happily_273609-8698.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 5" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/indoor-shot-glad-young-bearded-man-mustache-wears-denim-shirt-smiles-happily_273609-8698.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 5" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/indoor-shot-glad-young-bearded-man-mustache-wears-denim-shirt-smiles-happily_273609-8698.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 5" class="h-20 w-22">
+                        <img style="border-radius: 15px; border: 2px solid white; padding: 5px" src="https://img.freepik.com/free-photo/indoor-shot-glad-young-bearded-man-mustache-wears-denim-shirt-smiles-happily_273609-8698.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Story 5" class="h-20 w-22">
+                    </div>
+                </div>
+                <!-- Post Creation Section -->
+                <div class="mb-4">
+                    <textarea class="w-full p-2 border rounded-md mb-2" placeholder="Compose new post..."></textarea>
+                    <!-- Icons for post options -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <!-- Replace these icons with actual icons -->
+                            <span class="text-gray-400 cursor-pointer"><i class="fas fa-camera"></i></span>
+                            <span class="text-gray-400 cursor-pointer"><i class="fas fa-video"></i></span>
+                            <span class="text-gray-400 cursor-pointer"><i class="fas fa-microphone"></i></span>
+                        </div>
+                        <div>
+                            <button class="bg-gray-400 text-white px-4 py-2 rounded-md mr-2">Post Later</button>
+                            <button class="bg-blue-500 text-white px-4 py-2 rounded-md">Post</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Posts Section -->
+                <div>
+                    <!-- Sample Post -->
+                    <div class="bg-gray-200 p-4 rounded-md mb-4">
+                        <div class="flex items-center mb-2">
+                            <img style="border-radius: 10px" src="https://img.freepik.com/free-photo/close-up-portrait-lovely-young-african-american-woman-with-curly-afro-haircut-smiling-with-happy-pleasant-expression-enjoying-winter-holidays-wearing-sweater-blue-wall_1258-35442.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Profile Picture" class="h-20 w-15 ">
+                            <div class="ml-2">
+                                <h3 class="font-semibold">Mary Ann</h3>
+                                <p class="text-gray-600">2 hours ago</p>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tortor vel eros ullamcorper convallis.</p>
+                        <img src="ecommerce.jpg" alt="">
+                    </div>
+                    <!-- More posts go here -->
+                    <div class="bg-gray-200 p-4 rounded-md mb-4">
+                        <div class="flex items-center mb-2">
+                            <img style="border-radius: 10px" src="https://img.freepik.com/free-photo/close-up-portrait-lovely-young-african-american-woman-with-curly-afro-haircut-smiling-with-happy-pleasant-expression-enjoying-winter-holidays-wearing-sweater-blue-wall_1258-35442.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Profile Picture" class="h-20 w-15 ">
+                            <div class="ml-2">
+                                <h3 class="font-semibold">Mary Ann</h3>
+                                <p class="text-gray-600">2 hours ago</p>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tortor vel eros ullamcorper convallis.</p>
+                        <img src="elearning.jpg" alt="">
+                    </div>
+                    <div class="bg-gray-200 p-4 rounded-md mb-4">
+                        <div class="flex items-center mb-2">
+                            <img style="border-radius: 10px" src="https://img.freepik.com/free-photo/close-up-portrait-lovely-young-african-american-woman-with-curly-afro-haircut-smiling-with-happy-pleasant-expression-enjoying-winter-holidays-wearing-sweater-blue-wall_1258-35442.jpg?size=626&ext=jpg&uid=R114265951&ga=GA1.2.1234263249.1715352068&semt=sph" alt="Profile Picture" class="h-20 w-15 ">
+                            <div class="ml-2">
+                                <h3 class="font-semibold">Mary Ann</h3>
+                                <p class="text-gray-600">2 hours ago</p>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget tortor vel eros ullamcorper convallis.</p>
+                        <img src="blogging.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="chatIcon" class="block fixed bottom-0 cursor-pointer right-0 z-40 sm:hidden">
+            <img src="chatIcon.png" width="100px" height="100px" alt="">
+        </div>
+
+        
+<!-- Right Sidebar -->
+<div id="chatSidebar" class="hidden fixed z-50 inset-0 overflow-auto bg-black bg-opacity-20 lg:block sm:w-0">
+    <div class="w-3/5 fixed right-0 px-4 sm:block lg:w-1/5" style="top: 105px">
+        <div class="bg-white p-4 rounded shadow-md" style="height: 80vh;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px;">
+                <h2 class="text-xl font-semibold mb-2">Chat</h2>
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <i class="fas fa-plus-circle rounded-full"
+                        style="margin-right: 10px; padding: 5px; background-color: rgba(128, 128, 128, 0.164);"></i>
+                    <i class="fas fa-cog rounded-full"
+                        style="padding: 5px; background-color: rgba(128, 128, 128, 0.164);"></i>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: baseline; margin-bottom: 25px;">
+                <div style="display: flex; justify-content: center; align-items: baseline;">
+                    <i id="user" class="fas fa-user"
+                        style="margin-right: 10px; padding: 10px 20px; background-color: rgba(0, 0, 255, 0.2); border-radius: 10px; cursor: pointer;"></i>
+                    <i id="groups" class="fas fa-users"
+                        style="padding: 10px 20px; border-radius: 10px; cursor: pointer;"></i>
+                </div>
+            </div>
+
+            <!-- Chat -->
+            <div id="chatSection" class="h-5 mb-4"></div>
+
+            <div style="position: absolute; bottom: 0; width: 75%;">
+                <i class="fas fa-search mr-2" style="position: absolute; top:15px; left:10px"></i><input type="text"
+                    placeholder="Search for Users" style="padding-left: 35px;" class="w-full p-2 border rounded-md mb-2"
+                    placeholder="Search...">
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-500 text-white text-center py-4">
+        &copy; 2024 Simple Social Media Platform
+    </footer>
+</body>
+</html>

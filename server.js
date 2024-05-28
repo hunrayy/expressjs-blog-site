@@ -9,6 +9,7 @@ const multer = require("multer")
 const PORT = process.env.PORT
 const mongodb = require("mongodb")
 const client = new mongodb.MongoClient(process.env.DB_URL)
+const axios = require("axios")
 const auth = require("./auth/auth")
 
 // use the installed modules
@@ -35,17 +36,20 @@ const uploads = multer({storage: storage})
 server.get("/", (request, response, next)=>{
     response.render("home")
 })
+server.get("/test", (request, response, next)=>{
+    response.render("test")
+})
 
 
 server.get("/register", (request, response)=>{
     response.render("register")
 })
-server.post("/register", async(request, response)=>{
-    const {firstname, lastname, email, password} = request.body
-    const create_user_account = await auth.create_user_account(firstname, lastname, email, password)
-    console.log("from server", create_user_account)
-    response.send(create_user_account)
-})
+// server.post("/register", async(request, response)=>{
+//     const {firstname, lastname, email, password} = request.body
+//     const create_user_account = await auth.create_user_account(firstname, lastname, email, password)
+//     console.log("from server", create_user_account)
+//     response.send(create_user_account)
+// })
 
 
 server.get("/login", (request, response, next)=>{
